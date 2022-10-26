@@ -169,7 +169,18 @@ struct ContentView: View {
                                     .foregroundColor(.secondary)
                             }
                         }
-                        
+                    }
+                }
+                
+                Section("Reactors") {
+                    ForEach(Reactor.samples) { reactor in
+                        NavigationLink(value: reactor) {
+                            VStack(alignment: .leading) {
+                                Text(reactor.name)
+                                Text(reactor.description)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
                     }
                 }
             }
@@ -177,7 +188,20 @@ struct ContentView: View {
                 Text(engine.name)
                     .font(.headline)
             }
-            
+            .navigationDestination(for: Reactor.self) { reactor in
+                VStack {
+                    Text(reactor.name)
+                        .font(.headline)
+                    
+                    Button("Go Home") {
+                        path.removeLast(path.count)
+                    }
+                    
+                    Button("Go to Engine Room") {
+                        path.append(Engine.samples[0])
+                    }
+                }
+            }
         }
     }
 }
