@@ -10,6 +10,7 @@ unicorn-app-ios
 ```
 struct ContentView: View {
   var body: some View {
+    NavigationStack {
     
     List {
       NavigationLink("PAYLOAD", value: "payload value")
@@ -20,6 +21,7 @@ struct ContentView: View {
       Text(string)
         .foregroundColor(.blue)
     }
+  }
   }
 
 }
