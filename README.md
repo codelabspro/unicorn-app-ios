@@ -10,18 +10,19 @@ unicorn-app-ios
 ```
 struct ContentView: View {
   var body: some View {
-    NavigationStack {
-    
-    List {
-      NavigationLink("PAYLOAD", value: "payload value")
-      
-    
-    }
-    .navigationDestination(for: String.self) { string in
-      Text(string)
-        .foregroundColor(.blue)
-    }
-  }
+        NavigationStack {
+            List {
+                NavigationLink("PAYLOAD", value: "payload value")
+                
+                NavigationLink("PAYLOAD2", value: "payload value 2")
+                
+                NavigationLink("PAYLOAD3", value: "payload value 3")
+            }
+            .navigationDestination(for: String.self) { stringValue in
+                Text(stringValue)
+                    .foregroundColor(.blue)
+            }
+        }
   }
 
 }
