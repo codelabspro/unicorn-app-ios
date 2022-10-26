@@ -31,7 +31,8 @@ struct ContentView_Previews: PreviewProvider {
 
 ```
 
-### Step 1 - We may modify ContentView.swift as below
+### Step 1 - NavigationStack and NavigationLink
+* We may modify ContentView.swift as below
 
 ```
 import SwiftUI
@@ -57,4 +58,5 @@ struct ContentView: View {
 
 ```
 
-### Step 2 - We may modify ContentView.swift as below
+### Step 2 - - Navigation Path and Programmatic Navigation
+* We may modify ContentView.swift as below
