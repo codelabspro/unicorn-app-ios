@@ -105,7 +105,7 @@ struct ContentView_Previews: PreviewProvider {
 
 
 ```
-Step 3 - Dynamic Navigation Using NavigationPath
+### Step 3 - Dynamic Navigation Using NavigationPath
 * Add the Engine struct
 
 ```
