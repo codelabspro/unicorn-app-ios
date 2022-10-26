@@ -3,6 +3,8 @@ unicorn-app-ios
 
 
 ## Steps
+
+### Step 0 - Bootstrap Xcode 14.0.1 iOS App project using sensible defaults 
   
 The initial default code for ContentView.swift looks as below
 ```
@@ -29,6 +31,7 @@ struct ContentView_Previews: PreviewProvider {
 
 ```
 
+### Step 1 - We may modify ContentView.swift as below
 
 ```
 import SwiftUI
@@ -53,3 +56,5 @@ struct ContentView: View {
 }
 
 ```
+
+### Step 2 - We may modify ContentView.swift as below
