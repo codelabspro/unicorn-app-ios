@@ -84,6 +84,10 @@ struct ContentView: View {
                     Text(stringValue)
                         .foregroundColor(.blue)
                     
+                    Button("Navigate to Reactor Room") {
+                        path.append("ReactorRoom")
+                    }
+                    
                     Button("Back to Previous") {
                         path.removeAll()
                     }
