@@ -80,11 +80,16 @@ struct ContentView: View {
                 }
             }
             .navigationDestination(for: String.self) { stringValue in
-                Text(stringValue)
-                    .foregroundColor(.blue)
+                VStack {
+                    Text(stringValue)
+                        .foregroundColor(.blue)
+                    
+                    Button("Back to Previous") {
+                        path.removeAll()
+                    }
+                }
             }
         }
-
     }
 }
 
@@ -93,5 +98,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 
 ```
