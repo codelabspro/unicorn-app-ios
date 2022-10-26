@@ -58,7 +58,7 @@ struct ContentView: View {
 
 ```
 
-### Step 2 - - Navigation Path and Programmatic Navigation
+### Step 2 -  Navigation Path and Programmatic Navigation
 * We may modify ContentView.swift as below
 
 ```
@@ -105,3 +105,5 @@ struct ContentView_Previews: PreviewProvider {
 
 
 ```
+Step 3 - Dynamic Navigation 
+* We may modify ContentView.swift as below
