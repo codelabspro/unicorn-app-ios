@@ -8,33 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var path = [String]()
+    @State private var path = NavigationPath()
     var body: some View {
         NavigationStack(path: $path) {
             List {
-                NavigationLink("PAYLOAD", value: "payload value")
+                Section("Engine List") {
+                    ForEach(Engine.samples) { engine in
+                        NavigationLink(value: engine) {
+                            VStack(alignment: .leading) {
+                                Text(engine.name)
+                                Text(engine.description)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                }
                 
-                NavigationLink("PAYLOAD2", value: "payload value 2")
-                
-                NavigationLink("PAYLOAD3", value: "payload value 3")
-                
-                Button("Navigate to EngineRoom") {
-                    path.append("EngineRoom")
+                Section("Reactor List") {
+                    ForEach(Reactor.samples) { reactor in
+                        NavigationLink(value: reactor) {
+                            VStack(alignment: .leading) {
+                                Text(reactor.name)
+                                Text(reactor.description)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
                 }
             }
-            .navigationDestination(for: String.self) { stringValue in
-                VStack {
-                    Text(stringValue)
-                        .foregroundColor(.blue)
-                    
-                    Button("Navigate to Reactor Room") {
-                        path.append("ReactorRoom")
-                    }
-                    
-                    Button("Back to Root") {
-                        path.removeAll()
-                    }
-                }
+            .navigationDestination(for: Engine.self) { engine in
+                Text(engine.name)
+                    .font(.headline)
+            }
+            .navigationDestination(for: Reactor.self) { reactor in
+                Text(reactor.name)
+                    .font(.headline)
             }
         }
 
